@@ -1,0 +1,405 @@
+/* Reset */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+
+/*************
+* Our Styles *
+*************/
+
+/* font import */
+/* import the "Bebas Neue" font. */
+
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('fonts/bebas_neue/BebasNeue.otf');
+}
+h1, h2, h3, label, #header ul li a, div {
+	font-family: 'Bebas Neue';
+}
+
+/* general styles */
+a {
+	text-decoration: none;
+}
+/* background */
+html {
+	height: 100%;
+	min-height: 100%;
+}
+body {
+	height: 100%;
+}
+#wrapper {
+	height: 100%;
+	background: url(../img/skyline_hi-res.png) no-repeat center;
+	background-size: cover;
+	overflow: scroll;
+}
+
+/* content area */
+#content {
+	width: 960px;
+	margin: 0 auto;
+	-webkit-transition: width .5s;
+}
+
+/* header */
+#logo {
+	font-size: 64px;
+	float: left;
+}
+#logo a {
+	color: #F2EBD5;
+}
+#logo span {
+	color: #BFB895;
+}
+#header {
+	overflow: hidden;
+	margin: 20px 0;
+}
+#header ul {
+	float: right;
+	overflow: hidden;
+	position: relative;
+}
+#header ul li {
+	float: left;
+	margin-right: 25px;
+}
+#header ul li.last {
+	margin-right: 0;
+}
+#header ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 22px;
+	line-height: 77px;
+	-webkit-transition: .5s color;
+	-moz-transition: .5s color;
+	transition: .5s color;
+	display: block;
+}
+#header ul li a:hover {
+	color: #BFB895;
+}
+
+/* main content */
+
+#content #main {
+	/* 
+	  I could have achieved a similar effect with the 'opacity' property,
+	  but then all the children would have had an opacity of .9, as well.
+	  Note that this won't work in ie8 and below.
+	*/
+	background-color: rgba(255,255,255,.9);
+
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	margin-bottom: 40px;
+	padding: 30px;
+	color: #333;
+	position: relative;
+}
+
+#content #main h2 {
+	font-size: 32px;
+}
+#content #main h2 span {
+	color: #8B8C80;
+}
+#content #main h3 {
+	margin-top: 30px;
+	font-size: 24px;
+	margin-bottom: 5px;
+}
+
+/* slideshow */
+#slideshow-container ul {
+	height: 500px;
+	position: relative;
+}
+#slideshow-container li {
+	position: absolute;
+	top: 0;
+	display: none;
+	margin-bottom: 0;
+}
+#slideshow-container li.active {
+	display: block;
+	z-index: 5;
+}
+#slideshow-container li img {
+	width: 900px;
+	height: 500px;
+	display: block;
+}
+#slideshow-container li .caption {
+	background-color: rgba(0,0,0,.7);
+	line-height: 50px;
+	color: white;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	font-size: 18px;
+	font-family: Helvetica, sans-serif;
+	text-indent: 10px;
+}
+
+/* contact form */
+#contact-form {
+	padding-top: 20px;
+	width: 65%;
+	overflow: hidden;
+}
+#contact-form label {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+#contact-form .neighborhoods label {
+	margin-bottom: 15px;
+}
+#contact-form textarea {
+	height: 100px;
+}
+#contact-form input[type="text"], #contact-form textarea {
+	display: block;
+	padding: 10px;
+	width: 81%;
+	font: 14px Helvetica, Arial;
+	text-align: left;
+}
+#contact-form .input {
+	clear: left;
+	margin-bottom: 30px;
+}
+#contact-form .input.half-line {
+	width: 40%;
+	float: left;
+	clear: none;
+	margin-right: 30px;
+}
+#contact-form .input.checkboxes {
+	overflow: hidden;
+}
+#contact-form .input.half-line input[type="text"] {
+	width: 90%;
+}
+#contact-form .checkbox-container {
+	float: left;
+	width: 40%;
+	margin: 0 30px 5px 0;
+}
+#contact-form .checkbox-container label {
+	display: inline;
+	margin-left: 10px;
+	font-size: 15px;
+	vertical-align: middle;
+}
+
+#submit-button {
+	padding: 8px;
+	background:	none;
+	border: 1px solid #BBB;
+	float: right;
+	background: #D3D3D3;
+	cursor: pointer;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-family: Helvetica, Arial;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	position: relative;
+	right: 89px;
+	margin-top: 20px;
+}
+#submit-button:hover {
+	background-color: #ddd;
+}
+
+
+/* listings page */
+#listings-container {
+	margin-top: 20px;
+	width: 95%;
+	margin: 0 auto;
+}
+#listings-container .listing {
+	background-color: #aaa;
+	border-radius: 6px;
+	float: left;
+	box-shadow: 3px 3px 17px -3px #333;
+	border: 1px solid #aaa;
+	margin: 0 16px 30px 16px;
+	position: relative;
+	width: 251px;
+	-webkit-transition: .4s box-shadow cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+#listings-container .listing:hover {
+	box-shadow: 11px 11px 30px -8px #333;
+}
+#listings-container .listing .overlay {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	line-height: 195px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	opacity: 0;
+	background-color: rgba(0,0,0,.5);
+	-webkit-transition: .5s opacity;
+	border-radius: 6px;
+	font-size: 20px;
+}
+#listings-container .listing:hover .overlay {
+	opacity: 1;
+}
+#listings-container .photo-container img {
+	width: 100%;
+	height: 150px;
+	border-radius: 6px 6px 0 0;
+	display: block;
+}
+#listings-container .listing-details {
+	border-top: 1px solid #aaa;
+	font-size: 20px;
+	padding: 10px;
+	border-radius: 0 0 6px 6px;
+	box-shadow: 0px 0px 16px -1px #fff inset;
+}
+#listings-container .listing-details div {
+	float: left;
+}
+#listings-container .listing-details .bed_bath {
+	float: right;
+}
+
+/* next/prev buttons */
+
+#controls-container {
+	position: absolute;
+	right: 10px;
+	top: 100px;
+}
+
+/* clearfix class */
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.last {
+	margin-right: 0 !important;
+}
+
+
+/* media queries */
+
+/* screen width less than 960px and more than 768px */
+/* Note: Design for a width of 768px */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#content {
+		width: 768px;
+	}
+	#listings-container {
+		width: 81%;
+	}
+}
+
+/* Note: Design for a width of 320px */
+@media only screen and (max-width: 767px) {
+	#content {
+		width: 300px;
+	}
+	#header ul li a {
+		line-height: 50px;
+	}
+	
+	#logo {
+		float: none;
+	}
+	#header {
+		text-align: center;
+	}
+	#header ul {
+		float: none;
+		width: 146px;
+		margin: 0 auto;
+	}
+
+	#main h2, #main h3 {
+		text-align: center;
+	}
+	#main-nav .contact {
+		display: none;
+	}
+	#main-nav .listings {
+		margin-right: 0;
+	}
+	#listings-container {
+		margin: 0 auto;
+	}
+	#listings-container .listing {
+		margin: 0 0 30px;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#content {
+		width: 420px;
+	}
+	#listings-container {
+		width: 252px;
+	}
+}
+@media only screen and (max-width: 479px) {
+	
+	#content #main h2 {
+		font-size: 28px;
+	}
+	#content .listing {
+		width: 226px;
+	}
+}
