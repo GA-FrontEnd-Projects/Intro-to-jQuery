@@ -27,40 +27,219 @@
 	</head>
 	<body>
 		<div id="wrapper">
+			<nav>
+				<ul>
+					<li><a href="#top">Top</a></li>
+					<li><a href="#selectors">Selectors</a></li>
+					<li><a href="#traversal">Traversal</a></li>
+					<li><a href="#dom-manipulation">DOM Manipulation</a></li>
+					<li><a href="#animation">Animation</a></li>
+				</ul>
+			</nav>
 			<div id="content">
-				<nav id="header">
-					<h1 id="logo"><a href="index.html">Realty<span>Corp</span></a></h1>
-					<ul id="main-nav">
-						<li>
-							<a href="#">About Us</a>
-						</li>
-						<li class="listings">
-							<a href="listings.html">Listings</a>
-						</li>
-						<li class="contact last">
-							<a href="contact.html">Contact Us</a>
-						</li>
-					</ul>
-				</nav>
+
 				<div id="main">
-					<h2>We show you apartments. <span>You pay us money.</span></h2>
-					<h3>Latest Listings:</h3>
-					<div id="slideshow-container">
-						<ul id="slides">
-							<li class="active">
-								<img src="img/1bdrm_a.jpg" />
-								<div class="caption">123 41st St</div>
-							</li>
-							<li>
-								<img src="img/1bdrm_b.jpg" />
-								<div class="caption">234 52nd St</div>
-							</li>
-							<li>
-								<img src="img/1bdrm_c.jpg" />
-								<div class="caption">345 63rd St</div>
-							</li>
+					<a name="top"></a>
+					<h1>Fun with jQuery</h1>
+					<p class="directions">jQuery is a powerful library for Javascript that makes common front-end tasks significantly easier compared to plain Javascript. It can handle things like DOM (HTML element) manipulation, AJAX requests, animation, and more. It's cross-browser compatible, so your code will likely work in major browsers without needing much tweaking. For front end developers, this has become a standard and crucial tool, and it has triggered a boom in beautiful, intricate web application front ends.</p>
+					<p class="directions">jQuery is immensely powerful, but today we will just focus on the basics. We can build up to more difficult problems over subsequent sessions.</p>
+					<div class="section selectors">
+						<a name="selectors"></a>
+						<h2>Selectors</h2>
+						
+
+						<p class="directions">Most jQuery tasks follow a simple pattern: select a group of elements (or just one) using CSS selectors, then do something with the result set.It's probably been a while since you took FEWD, so let's refresh ourselves on some of the common selectors.</p>
+
+						<h3>ID</h3>
+						<p class="directions">Target the element below using its ID, then turn it green.</p>
+						<p id="target1" class="target"></p>
+
+						<h3>Class</h3>
+						<p class="directions">Target the elements below using a class. Turn them red, but be careful not to turn any other elements red.</p>
+						<ul id="class-targets">
+							<li class="target list-item"></li>
+							<li class="target list-item"></li>
+							<li class="target list-item"></li>
 						</ul>
-					</div> <!-- end #slideshow-container -->
+
+						<h3>Tag Name</h3>
+						<div id="tagname-targets">
+							<p class="directions">Turn only the &lt;section&gt;s blue</p>
+							<div class="target">I'm a &lt;div&gt;</div>
+							<p class="target">I'm a &lt;p&gt;</p>
+							<section class="target">I'm a &lt;section&gt;</section>
+							<article class="target">I'm an &lt;article&gt;</article>
+							<h5 class="target">I'm an &lt;h5&gt;</h5>
+							<section class="target">I'm a &lt;section&gt;</section>
+						</div>
+
+						<h3>Tag Name with Attribute</h3>
+						<div id="tagname-attribute-targets">
+							<p class="directions">Turn only the &lt;input&gt;s of type "button" gold</p>
+							<div class="spacer">
+								<input class="target" type="text" value="Text" />
+							</div>
+							<div class="spacer">
+								<input class="target" type="checkbox" id="check1" value="Checkbox" />
+								<label for="check1">Checkbox</label>
+							</div>
+							<div class="spacer">
+								<input class="target" type="button" value="Button" />
+							</div>
+							<div class="spacer">
+								<input class="target" type="password" placeholder="Password" />
+							</div>
+							<div class="spacer">
+								<input class="target" type="reset" value="Reset" />
+							</div>
+							<div class="spacer">
+								<input class="target" type="button" value="Button" />
+							</div>
+						</div>
+					</div>
+
+					<div class="section traversal">
+						<a name="traversal"></a>
+						<h2>Traversal</h2>
+						<p class="directions">The DOM is the list of elements in an HTML document, complete with all their properties. It is represented through family relationships - elements can be children, parents, siblings, and descendents/ancestors of other elements. jQuery makes it easy to select elements using these family relationships.</p>
+
+						<h3>Children()</h3>
+						<p class="directions">Turn the children of #parent1 green using children() to select them.</p>
+						<div id="parent1">
+							<p class="target"></p>
+							<p class="target"></p>
+							<p class="target"></p>
+						</div>
+
+						<h3>Parent() and siblings()</h3>
+						<p class="directions">Turn the parent of #child1 green using parent() to select it. Turn its siblings blue.</p>
+						<div>
+							<p id="child1" class="target"></p>
+							<p class="target"></p>
+							<p class="target"></p>
+						</div>
+
+						<h3>Chaining</h3>
+						<p class="directions">Did you accomplish the last exercise in one line of code, or two? You can shorten your code (and increase efficiency) by using what is called "chaining" to perform multiple operations relating to the same resultset.</p>
+						<p class="directions">Let's say, for example, that we want to change the text inside an element as well as changing its background color. You can do that in two lines:
+
+						<div class="code-container">
+							<code>
+								$('#child1').text('Here is my text');</br>
+								$('#child1').css('background-color', 'blue');
+							</code>
+						</div>
+						<p class="directions">Or you can do it in one, by chaining the method calls together:</p>
+						<div class="code-container">
+							<code>
+								$('#child1').text('Here is my text').css('background-color', 'blue');
+							</code>
+						</div>
+						<p class="directions">There are two real advantages to chaining here: you are writing less code, and you are achieving the same result more efficiently by removing the need to generate a whole new resultset when we are acting on the same element in both lines.</p>
+						<p class="directions">That example used two operations on the same resultset, but we can achieve the same thing with elements that are related to one another, as well. Here's what the example from the parent() section would look like with each operation on its own line:</p>
+
+						<div class="code-container">
+							<code>
+								$('#child1').parent().css('background-color', 'green');</br>
+								$('#child1').siblings().css('background-color', 'blue');
+							</code>
+						</div>
+						<p class="directions">And again using chaining:</p>
+						<div class="code-container">
+							<code>
+								$('#child1').parent().css('color', 'green').end().siblings().css('color', 'blue');
+							</code>
+						</div>
+						<p class="directions">We're essentially combining the two lines of code, removing the sometimes expensive step of selecting #child1 again by using end() to undo the most recent selection/filtering operation. Our result set started off as #child1, then changed to the containing &lt;div&gt; of #child1 after the call to parent(), and end() simply says "Go back one step and give me the result set we had before this one", which gives us #child1. You only need to use end() when you would like to chain method calls after using methods that change your resultset; methods like text(), html(), and css() act on a resultset without changing it, while methods like parent(), children(), and siblings() will change your resultset from whatever you started with.</p>
+
+						<h3>Find() and closest()</h3>
+						<p class="directions">You've seen parents() and children(), but what if we want to do something to an element that is two levels above or below a given element? Or more? We have the find() and closest() methods for that - find() looks for elements matching your selector in the descendent elements of a given element, while closest() looks through ancestors.</p>
+
+						<p class="directions">Find an element with a class of 'last' inside of #container-outer. Then find #container-outer starting from .target.last.</p>
+
+						<div id="container-outer">
+							<div id="container-inner">
+								<p id="child1" class="target"></p>
+								<p class="target"></p>
+								<p class="target last"></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="section dom-manipulation">
+						<a name="dom-manipulation"></a>
+						<h2>DOM Manipulation</h2>
+						<p class="directions">One of the most useful features of jQuery is its wrapper methods that make changing DOM elements easy.</p>
+						<h3>Text inside an element</h3>
+						<p id="text-change" class="target">Change only my &lt;span&gt;'s text. <span>Change me</span></p>
+
+						<h3>HTML inside an element</h3>
+						<p id="html-change" class="target">Replace this text with a span with red text. Don't delete the &lt;p&gt; itself</p>
+
+						<h3>Change a class</h3>
+						<p id="class-change" class="target remove-me">Remove the "remove-me" class and add an "add-me" class <span class="removed">Class Removed!</span><span class="added">Class Added!</span></p>
+
+						<h3>Add/Change an attribute</h3>
+						<p class="directions">You can change any attribute of an HTML element using Javascript. jQuery makes it really easy. Add a "title" attribute to the element below, giving it a value of "This is my title". Then change the value to "This is my new title".</p>
+						<p id="attribute-change" class="target">
+							<span class="first">First title</span>
+							<span class="second">New title</span>
+							<span class="some">Some title, not the right one</span>
+						</p>
+
+						<h3>Add/Change styles</h3>
+						<p class="directions">You can change any CSS rule of an HTML element using the css() method. You can also get the value of an element's CSS rule by passing a single argument into this function.</p>
+
+						<p class="directions">Turn the &lt;div&gt; below green using the css() method.</p>
+						<div class="target" id="change-style1"></div>
+
+						<p class="directions">Get the value of the element below's position property. Then add the return value as a class.</p>
+						
+						<div class="target" id="change-style2"></div>
+
+						<h3>Add an Element</h3>
+						<p class="directions">Add a new &lt;p&gt; element that has a class of "target" to the bottom of the container that holds the other "target" &lt;p&gt;s. Add another one after that one using the :last selector.</p>
+						<div id="target-container">
+							<p class="target"></p>
+							<p class="target"></p>
+						</div>
+
+						<h3>Remove an Element</h3>
+						<p class="directions">Remove the element labeled "Remove Me". Leave the others.</p>
+						<p id="keep1" class="target">Keep Me</p>
+						<p id="remove" class="target">Remove Me</p>
+						<p id="keep2" class="target">Keep Me</p>
+
+					</div>
+
+					<div class="section animation">
+						<a name="animation"></a>
+						<h2>Animation</h2>
+						<p class="directions">jQuery makes animations easy (and surprisingly fun) using its animate() method. You can change any animateable property over a configurable period of time, allowing for really interesting and visually pleasing effects.</p>
+						
+						<h3>Simple animations</h3>
+						<p class="directions">Animate the width of the #animate-target1 &lt;div&gt; below to 90% over 2 seconds.</p>
+						<div id="animate-target1" class="target"></div>
+
+						<h3>Animating more than one property</h3>
+						<p class="directions">Animate the width of the #animate-target2 &lt;div&gt; below to 90% and the height to 75px over 2 seconds.</p>
+						
+						<div id="animate-target2" class="target"></div>
+
+						<h3>Animating with callbacks</h3>
+						<p class="directions">Callbacks are functions that run upon the completion of another function call. Either an anonymous function or a reference to a named function is passed in as the third argument to animate(), and it will be run upon completion of the animation. Use the same two-property animation from above on the #animate-target3 &lt;div&gt; below, and turn the &lt;div&gt; green once the animation has completed. Try breaking the animation into two parts - animate the width of the div, then animate the height in the callback.</p>
+						
+						<div id="animate-target3" class="target"></div>
+
+						<h3>Pre-made effects</h3>
+						<p class="directions">jQuery comes with several ready-made effects for common animations. fadeIn() and fadeOut are two of these, and they do exactly what you would expect. See http://api.jquery.com/category/effects/ for more information.</p>
+						
+						<p class="directions">Fade #animate-target4 out over two seconds, use delay() to wait for two seconds, then use fadeIn() over another two seconds to fade the element back in.</p>
+
+						<div id="animate-target4" class="target"></div>
+
+					</div>
+
 				</div> <!-- end #main -->
 			</div> <!-- end #content -->
 		</div> <!-- end #wrapper -->

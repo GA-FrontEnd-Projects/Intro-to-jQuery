@@ -1,40 +1,31 @@
-RealtyCorp Listings page
+Intro to jQuery
 
-Difficulty Level: Medium
+Difficulty Level: Easy
 
-Technologies/skills used: jQuery, event handlers, objects, DOM manpulation
+Technologies/skills used: jQuery selectors, animations, DOM manipulation, and traversal
 
 
 
 Problem Description:
 
-RealtyCorp, a stylish new real estate broker, has hired you to finish building their website. The previous developer was more of a designer, really, so while the site looks decent, it's not quite done.
-
-Thanks to all the improvements in the website lately, RealtyCorp has been getting a number of new listings. The listings page could get out of control - with all the new listings, there could be 27 entries on the listings page. You suggest separating the listings page into several shorter pages, which the partners immediately dismiss as a bad idea. Five minutes later they suggest your exact solution as if they had come up with it themselves and tell you to get to work.
+This is an introduction to jQuery for students who want to get the basics of the library down. Many of our assignments assume at least this level of understanding of jQuery, so this is a highly-recommended assignment for all students.
 
 
 
 Requirements:
 
-	1) In script.js, find the array of objects named "listings". Extend the array to have 50 elements. It's OK if you copy and paste the first three objects until there are 27. (For extra fun, leave the three elements that are currently there and duplicate them using a loop until there are 27 elements in the array).
-
-	2) Using a loop, create the HTML necessary to add all the items in the listings array onto the page. Use the inspector to copy the HTML you will need from the listings page, replacing the hard-coded values with the attributes of a given element of the listings array. Is it more efficient to add the HTML to the DOM during the loop, or after the loop completes? Does that change what you do with the HTML during each iteration of the loop?
-
-	3) Now that you know how to add HTML to the DOM, delete the listings items from listings.html and add the first nine items of the listings array to the page when the page loads. Try adding the elements to the DOM outside of the $(document).ready() handler. What happens? Why? What does $(document).ready() mean, and what does it do?
-
-	4) You'll notice the next/previous buttons do not work at the moment. Create functions that run when each button is clicked to update which items from the listings array are shown. These are called "event handlers", and they allow you to create specific behaviors for javascript events. How will you keep track of which page is shown?
-
-	5) The "items per page" select box does not work at the moment, either. Now that you've added the next/previous button handlers, add a handler that shows the correct number of items when someone changes the "items per page" select box. For this example, it's fine to start from the beginning of the listings array when someone changes the value of the select box. How does this affect pagination?
-
-	6) Pick another event: hover (typically takes two arguments, the mouseover handler function and the mouseout function. You an also separate into two events), keydown, keyup, scroll, or window resize, and make something interesting happen with the listings when that event is fired.
+	Follow the intructions in index.html to learn the basics of jQuery.
 
 
 
 
 
 	
-	Helpful CSS examples and articles:
+	Helpful examples and articles:
 
-	* About events: http://www.webmonkey.com/2010/02/javascript_events/
-	* List of jQuery events: http://api.jquery.com/category/events/
+	* jQuery general documentation: http://api.jquery.com/
+	* Selectors: http://api.jquery.com/category/selectors/
+	* DOM traversal: http://api.jquery.com/category/traversing/
+	* DOM manipulation: http://api.jquery.com/category/manipulation/
+	* Animation: http://api.jquery.com/category/effects/
 	
